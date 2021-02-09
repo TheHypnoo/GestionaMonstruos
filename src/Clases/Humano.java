@@ -9,12 +9,13 @@ public class Humano extends Personaje {
     protected ArrayList<Armas> armas;
     protected boolean inteligencia;
 
-    public Humano(String nombrePersonaje,String faccionPersonaje,int potenciaAtaque, int numeroArmas, ArrayList<Armas> armas, boolean inteligencia) {
+    public Humano(String nombrePersonaje,String raza,String faccionPersonaje,int potenciaAtaque, int numeroArmas, ArrayList<Armas> armas, boolean inteligencia) {
         this.potenciaAtaque = potenciaAtaque;
         this.numeroArmas = numeroArmas;
         this.armas = armas;
         this.inteligencia = inteligencia;
         super.nombre = nombrePersonaje;
+        super.raza = raza;
         super.faccion = faccionPersonaje;
     }
 

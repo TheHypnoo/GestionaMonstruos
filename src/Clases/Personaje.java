@@ -4,6 +4,16 @@ public abstract class Personaje {
     String nombre;
     String faccion;
 
+    public String getRaza() {
+        return raza;
+    }
+
+    public void setRaza(String raza) {
+        this.raza = raza;
+    }
+
+    String raza;
+
     public String getNombre() {
         return nombre;
     }
@@ -24,6 +34,7 @@ public abstract class Personaje {
     public void mostrarInfo(){
         System.out.println("+---------------------------------------+");
         System.out.println("Nombre del personaje: "+getNombre());
+        System.out.println("Raza del personaje: "+getRaza());
         System.out.println("Faccion del personaje: "+getFaccion());
     }
 }

@@ -8,12 +8,13 @@ public class Elfo extends Personaje {
     protected ArrayList<Armas> armas;
     protected double magia;
 
-    public Elfo(String nombrePersonaje,String faccionPersonaje,int potenciaAtaque, int numeroArmas, ArrayList<Armas> armas, double magia) {
+    public Elfo(String nombrePersonaje,String raza,String faccionPersonaje,int potenciaAtaque, int numeroArmas, ArrayList<Armas> armas, double magia) {
         this.potenciaAtaque = potenciaAtaque;
         this.numeroArmas = numeroArmas;
         this.armas = armas;
         this.magia = magia;
         super.nombre = nombrePersonaje;
+        super.raza = raza;
         super.faccion = faccionPersonaje;
     }
 

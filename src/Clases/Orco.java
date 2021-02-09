@@ -8,12 +8,13 @@ public class Orco extends Personaje {
     protected ArrayList<Armas> armas;
     protected int tenacidad;
 
-    public Orco(String nombrePersonaje,String faccionPersonaje,int potenciaAtaque, int numeroArmas, ArrayList<Armas> armas, int tenacidad) {
+    public Orco(String nombrePersonaje,String raza,String faccionPersonaje,int potenciaAtaque, int numeroArmas, ArrayList<Armas> armas, int tenacidad) {
         this.potenciaAtaque = potenciaAtaque;
         this.numeroArmas = numeroArmas;
         this.armas = armas;
         this.tenacidad = tenacidad;
         super.nombre = nombrePersonaje;
+        super.raza = raza;
         super.faccion = faccionPersonaje;
     }
 

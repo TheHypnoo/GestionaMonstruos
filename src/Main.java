@@ -4,10 +4,15 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/*
+    Created by @TheHypnoo
+    https://github.com/TheHypnoo/GestionaMonstruos
+    9/02/2021
+ */
+
 public class Main {
     Scanner sc = new Scanner(System.in);
     ArrayList<Personaje> personajes = new ArrayList<>();
-    //Mejora añadir la raza
 
     public static void main(String[] args) {
         Main Start = new Main();
@@ -51,7 +56,8 @@ public class Main {
     }
 
     public void creaPersonaje(){
-        int raza;
+        String raza;
+        int razaPersonaje;
         String faccion;
         System.out.println("Bienvenido a la creación de personaje");
         System.out.println("Escribe un nombre para el personaje: ");
@@ -74,9 +80,9 @@ public class Main {
         System.out.println("1. Humano");
         System.out.println("2. Orco");
         System.out.println("3. Elfo");
-        raza = sc.nextInt();
+        razaPersonaje = sc.nextInt();
         //Comprueba que lo escrito es correcto
-            if(raza == 1 || raza == 2 || raza == 3) {
+            if(razaPersonaje == 1 || razaPersonaje == 2 || razaPersonaje == 3) {
                 razaCorrecta = true;
             } else {
                 System.out.println("No has añadido una opción valida");
@@ -95,7 +101,7 @@ public class Main {
                 Armas Arma = new Armas(nombreArma,poderAtaqueArma);
                 armas.add(Arma);
             }
-        if(raza == 1) { //Humano
+        if(razaPersonaje == 1) { //Humano
             boolean inteligenciaCorrecta = false;
             int tieneInteligencia;
             do {
@@ -109,12 +115,12 @@ public class Main {
                     System.out.println("No has introducido una opción valida");
                 }
             } while (!inteligenciaCorrecta);
-            //Hacer la comprobacion
             boolean inteligencia;
             inteligencia = tieneInteligencia == 1;
-            Humano humano = new Humano(nombre,faccion,potenciaAtaque,numeroArmas,armas,inteligencia);
+            raza = "Humano";
+            Humano humano = new Humano(nombre,raza,faccion,potenciaAtaque,numeroArmas,armas,inteligencia);
             personajes.add(humano);
-        } else if(raza == 2) { //Orco
+        } else if(razaPersonaje == 2) { //Orco
             boolean tenacidadCorrecta = false;
             int tenacidad;
             do {
@@ -127,8 +133,8 @@ public class Main {
                     System.out.println("La tenacidad que has introducido no es correcta para el personaje");
                 }
             } while (!tenacidadCorrecta);
-            //Hacer la comprobacion
-            Orco orco = new Orco(nombre,faccion,potenciaAtaque,numeroArmas,armas,tenacidad);
+            raza = "Orco";
+            Orco orco = new Orco(nombre,raza,faccion,potenciaAtaque,numeroArmas,armas,tenacidad);
             personajes.add(orco);
         } else { //Elfo
             boolean magiaCorrecta = false;
@@ -143,8 +149,8 @@ public class Main {
                     System.out.println("La magia has introducido para el personaje no es correcta");
                 }
             } while (!magiaCorrecta);
-            //Hacer la comprobacion
-            Elfo elfo = new Elfo(nombre,faccion,potenciaAtaque,numeroArmas,armas,magia);
+            raza = "Elfo";
+            Elfo elfo = new Elfo(nombre,raza,faccion,potenciaAtaque,numeroArmas,armas,magia);
             personajes.add(elfo);
         }
         System.out.println("El personaje ha sido creado correctamente");
